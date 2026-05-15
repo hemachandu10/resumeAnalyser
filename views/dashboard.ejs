@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+<div class="dashboardCon">
+    <div class="dashboardContainer">
+        <h1>Analysis dashboard</h1>
+        <div class="contentContainer dashboard-grid">
+            <div class="card card-score">
+                <div class="card-body score-card">
+                    <span class="card-label">ATS score</span>
+                    <p class="ats-value"><%= result.ats_score %><span class="ats-max">/100</span></p>
+                    <p class="ats-caption">Higher scores suggest stronger keyword and structure alignment for typical ATS filters.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body role-card">
+                    <span class="card-label">Suggested roles</span>
+                    <ul>
+                    <% for(let role of result.best_career_roles){ %>
+                        <li><%= role %></li>
+                    <% } %>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body skills-card">
+                    <span class="card-label">Technical skills</span>
+                    <ul>
+                    <% for(let skill of result.technical_skills){ %>
+                            <li><%=skill%></li>
+                    <%}%>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body interview-card">
+                    <span class="card-label">Interview Readiness</span>
+                    <ul>
+                    <% for(let read of result.interview_readiness){ %>
+                        <li><%=read%></li>
+                    <%}%>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body suggestions-card">
+                    <span class="card-label">Resume improvements</span>
+                    <ul>
+                    <% for(let improve of result.resume_improvements){ %>
+                        <li><%=improve%></li>
+                    <%}%>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

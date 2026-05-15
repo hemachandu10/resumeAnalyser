@@ -1,0 +1,11 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+<div class="uploadCon">
+    <div class="uploadContext">
+        <h1 class="mb-0">Upload your resume</h1>
+        <p class="text-muted mb-0 small">PDF format · analysis runs on our server</p>
+        <form class="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".pdf,application/pdf" required />
+            <button type="submit" class="btn btn-primary w-100">Analyze resume</button>
+        </form>
+    </div>
+</div>
